@@ -1,5 +1,6 @@
-import tensorflow as tf
-from tensorflow.contrib import slim
+import tensorflow.compat.v1 as tf
+#from tensorflow.contrib import slim
+import tf_slim as slim
 
 from avod.core.avod_fc_layers import avod_fc_layer_utils
 

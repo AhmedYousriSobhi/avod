@@ -1,7 +1,7 @@
 import os
-import tensorflow as tf
-
-slim = tf.contrib.slim
+import tensorflow.compat.v1 as tf
+import tf_slim as slim
+slim = slim
 
 
 def load_checkpoints(checkpoint_dir, saver):

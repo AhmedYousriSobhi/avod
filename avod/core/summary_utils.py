@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def add_feature_maps_from_dict(end_points, layer_name):

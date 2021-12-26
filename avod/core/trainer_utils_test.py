@@ -1,7 +1,7 @@
 """ Trainer utilities Unit Test."""
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 import avod
 import avod.builders.config_builder_util as config_builder

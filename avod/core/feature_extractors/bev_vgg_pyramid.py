@@ -1,8 +1,8 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core.feature_extractors import bev_feature_extractor
-
-slim = tf.contrib.slim
+import tf_slim as slim
+slim = slim
 
 
 class BevVggPyr(bev_feature_extractor.BevFeatureExtractor):

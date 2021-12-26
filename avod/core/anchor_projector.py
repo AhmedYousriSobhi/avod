@@ -5,7 +5,7 @@ for anchors rotated at 0 or 90 degrees
 """
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from wavedata.tools.core import calib_utils
 

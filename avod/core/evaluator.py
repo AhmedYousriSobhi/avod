@@ -6,7 +6,7 @@ import os
 import numpy as np
 from multiprocessing import Process
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core import box_3d_encoder
 from avod.core import evaluator_utils
@@ -16,7 +16,7 @@ from avod.core import trainer_utils
 from avod.core.models.avod_model import AvodModel
 from avod.core.models.rpn_model import RpnModel
 
-tf.logging.set_verbosity(tf.logging.INFO)
+#tf.compat.v1.logging.set_verbosity(tf.logging.INFO)
 
 KEY_SUM_RPN_OBJ_LOSS = 'sum_rpn_obj_loss'
 KEY_SUM_RPN_REG_LOSS = 'sum_rpn_reg_loss'
@@ -125,12 +125,12 @@ class Evaluator:
         # This op can only be run on device with gpu
         # so it's skipped on travis
         is_travis = 'TRAVIS' in os.environ
-        if not is_travis:
+        #if not is_travis:
             # tf 1.4
             # tf.summary.scalar('bytes_in_use',
             #                   tf.contrib.memory_stats.BytesInUse())
-            tf.summary.scalar('max_bytes',
-                              tf.contrib.memory_stats.MaxBytesInUse())
+            #tf.summary.scalar('max_bytes',
+            #                  tf.contrib.memory_stats.MaxBytesInUse())
 
     def run_checkpoint_once(self, checkpoint_to_restore):
         """Evaluates network metrics once over all the validation samples.
@@ -357,7 +357,7 @@ class Evaluator:
         trainer_utils.load_checkpoints(self.checkpoint_dir,
                                        self._saver)
 
-        num_checkpoints = len(self._saver.last_checkpoints)
+        num_checkpoints = 1
 
         if self.skip_evaluated_checkpoints:
             already_evaluated_ckpts = self.get_evaluated_ckpts(
@@ -370,7 +370,7 @@ class Evaluator:
                 ckpt_idx = num_checkpoints - 1
                 ckpt_indices = [ckpt_idx]
             for ckpt_idx in ckpt_indices:
-                checkpoint_to_restore = self._saver.last_checkpoints[ckpt_idx]
+                checkpoint_to_restore = '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/avod/data/outputs/pyramid_cars_with_aug_example/checkpoints/pyramid_cars_with_aug_example_scratch_300_val-00120000' #self._saver.last_checkpoints[ckpt_idx]
                 self.run_checkpoint_once(checkpoint_to_restore)
 
         else:
@@ -434,7 +434,7 @@ class Evaluator:
             # Load current checkpoints available
             trainer_utils.load_checkpoints(self.checkpoint_dir,
                                            self._saver)
-            num_checkpoints = len(self._saver.last_checkpoints)
+            num_checkpoints = 1
 
             start = time.time()
 
@@ -446,7 +446,7 @@ class Evaluator:
             else:
                 for ckpt_idx in range(num_checkpoints):
                     checkpoint_to_restore = \
-                        self._saver.last_checkpoints[ckpt_idx]
+                        'pyramid_cars_with_aug_example_scratch_300_val-00120000'
                     ckpt_id = evaluator_utils.strip_checkpoint_id(
                         checkpoint_to_restore)
 

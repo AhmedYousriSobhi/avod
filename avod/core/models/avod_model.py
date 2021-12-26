@@ -1,6 +1,6 @@
 import numpy as np
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.builders import avod_fc_layers_builder
 from avod.builders import avod_loss_builder

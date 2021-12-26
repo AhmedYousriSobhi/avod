@@ -5,11 +5,11 @@ Usage:
     outputs, end_points = BevVgg(inputs, layers_config)
 """
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core.feature_extractors import bev_feature_extractor
-
-slim = tf.contrib.slim
+import tf_slim as slim
+slim = slim
 
 
 class BevVgg(bev_feature_extractor.BevFeatureExtractor):

@@ -15,7 +15,7 @@
 
 """Tests for object_detection.core.box_list."""
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core import box_list
 

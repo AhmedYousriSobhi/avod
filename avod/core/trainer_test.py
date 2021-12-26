@@ -1,6 +1,6 @@
 """Tests for avod.core.trainer with a dummy Detection Model"""
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 from tensorflow.contrib.layers.python.layers import layers
 from tensorflow.python.framework import random_seed

@@ -6,7 +6,7 @@ from distutils import dir_util
 import numpy as np
 import os
 from PIL import Image
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from wavedata.tools.core import calib_utils
 

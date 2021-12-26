@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core import box_4c_encoder
 

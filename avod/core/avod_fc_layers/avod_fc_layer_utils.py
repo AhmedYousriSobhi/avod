@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 OFFSETS_OUTPUT_SIZE = {
     'box_3d': 6,

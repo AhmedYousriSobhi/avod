@@ -1,7 +1,8 @@
 import numpy as np
-import tensorflow as tf
-from tensorflow.contrib import slim
-
+#import tensorflow as tf
+#from tensorflow.contrib import slim
+import tf_slim as slim
+import tensorflow.compat.v1 as tf
 from avod.builders import feature_extractor_builder
 from avod.core import anchor_encoder
 from avod.core import anchor_filter

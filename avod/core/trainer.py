@@ -5,7 +5,7 @@ DetectionModel.
 """
 import datetime
 import os
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import time
 
 from avod.builders import optimizer_builder

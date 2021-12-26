@@ -3,7 +3,7 @@ This module converts data to and from the 'box_3d' format
  [x, y, z, l, w, h, ry]
 """
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 import avod.core.format_checker as fc
 from wavedata.tools.obj_detection import obj_utils

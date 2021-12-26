@@ -1,7 +1,7 @@
 """Testing VGG BEV network.
 """
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from google.protobuf import text_format
 
 import avod.tests as tests

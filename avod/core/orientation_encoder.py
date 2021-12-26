@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def tf_orientation_to_angle_vector(orientations_tensor):

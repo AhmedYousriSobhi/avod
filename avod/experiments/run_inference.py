@@ -7,8 +7,8 @@ import argparse
 import os
 import sys
 
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod')
 import avod
 import avod.builders.config_builder_util as config_builder
 from avod.builders.dataset_builder import DatasetBuilder
@@ -122,7 +122,9 @@ def main(_):
     model_config, _, eval_config, dataset_config = \
         config_builder.get_configs_from_pipeline_file(
             experiment_config_path, is_training=False)
-
+    print("\n\n\n\n")
+    print(dataset_config)
+    print("\n\n\n\n")
     os.environ['CUDA_VISIBLE_DEVICES'] = args.device
     inference(model_config, eval_config,
               dataset_config, args.data_split,
