@@ -8,12 +8,12 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.patheffects as patheffects
-
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/wavedata')
 from wavedata.tools.core import calib_utils
 from wavedata.tools.obj_detection import obj_utils
 from wavedata.tools.obj_detection import evaluation
 from wavedata.tools.visualization import vis_utils
-
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod')
 import avod
 from avod.builders.dataset_builder import DatasetBuilder
 from avod.core import box_3d_encoder
@@ -57,7 +57,7 @@ def main():
 
     # Overwrite this to select a specific checkpoint
     global_step = None
-    checkpoint_name = 'avod_cars_example'
+    checkpoint_name = 'pyramid_cars_with_aug_example'
 
     # Drawing Toggles
     draw_proposals_separate = False

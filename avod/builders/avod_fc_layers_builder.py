@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core.avod_fc_layers import basic_fc_layers
 from avod.core.avod_fc_layers import fusion_fc_layers

@@ -1,6 +1,6 @@
 """A module for helper tensorflow ops."""
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def indices_to_dense_vector(indices,

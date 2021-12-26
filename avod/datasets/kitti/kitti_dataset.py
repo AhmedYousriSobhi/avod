@@ -6,7 +6,8 @@ import os
 
 import numpy as np
 import cv2
-
+import sys
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/wavedata')
 from wavedata.tools.core import calib_utils
 from wavedata.tools.obj_detection import obj_utils
 
@@ -72,7 +73,7 @@ class KittiDataset:
         all_files = os.listdir(self.dataset_dir)
 
         # Get possible data splits from txt files in dataset folder
-        possible_splits = []
+        possible_splits = ['val']
         for file_name in all_files:
             if fnmatch.fnmatch(file_name, '*.txt'):
                 possible_splits.append(os.path.splitext(file_name)[0])
@@ -159,6 +160,9 @@ class KittiDataset:
     def _set_up_directories(self):
         """Sets up data directories."""
         # Setup Directories
+        print("\n\n\n")
+        print(self._data_split_dir)
+        print("\n\n\n")
         self.image_dir = self._data_split_dir + '/image_' + str(self._cam_idx)
         self.calib_dir = self._data_split_dir + '/calib'
         self.disp_dir = self._data_split_dir + '/disparity'
@@ -274,6 +278,7 @@ class KittiDataset:
             # Load image (BGR -> RGB)
             cv_bgr_image = cv2.imread(self.get_rgb_image_path(
                 sample_name))
+            print(cv_bgr_image)
             rgb_image = cv_bgr_image[..., :: -1]
             image_shape = rgb_image.shape[0:2]
             image_input = rgb_image

@@ -2,10 +2,11 @@ import cv2
 from google.protobuf import text_format
 import numpy as np
 import numpy.random as random
-
+import sys
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/wavedata')
 from wavedata.tools.obj_detection import obj_utils
 from wavedata.tools.visualization import vis_utils
-
+sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod')
 from avod.builders.dataset_builder import DatasetBuilder
 from avod.core import box_3d_encoder
 from avod.core import box_3d_projector
@@ -101,7 +102,8 @@ def main():
     print('=== Showing BEV maps for image: {}.png ==='.format(sample_name))
 
     # Load image
-    image = cv2.imread(dataset.get_rgb_image_path(sample_name))
+    #image = cv2.imread(dataset.get_rgb_image_path(sample_name))
+    image = cv2.imread("/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/000002.png")
     image_shape = image.shape[0:2]
 
     kitti_utils = dataset.kitti_utils

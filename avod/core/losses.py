@@ -11,7 +11,7 @@ Classification losses:
 from abc import ABCMeta
 from abc import abstractmethod
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from avod.core import ops
 

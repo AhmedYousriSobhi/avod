@@ -15,7 +15,8 @@ class DatasetBuilder(object):
 
     KITTI_UNITTEST = KittiDatasetConfig(
         name="unittest-kitti",
-        dataset_dir=avod.root_dir() + "/tests/datasets/Kitti/object",
+        #dataset_dir= avod.root_dir() + "/tests/datasets/Kitti/object",
+        dataset_dir = "/media/yousri/Kingdom/Workspace/ITi/Tekomoro/Kitti Datasets",
         data_split="train",
         data_split_dir="training",
         has_labels=True,
