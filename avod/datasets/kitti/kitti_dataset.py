@@ -7,7 +7,7 @@ import os
 import numpy as np
 import cv2
 import sys
-sys.path.insert(1, '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/wavedata')
+sys.path.insert(1, os.getcwd()+'/avod/wavedata')
 from wavedata.tools.core import calib_utils
 from wavedata.tools.obj_detection import obj_utils
 
@@ -71,7 +71,7 @@ class KittiDataset:
 
         # Get all files and folders in dataset directory
         all_files = os.listdir(self.dataset_dir)
-
+        #print(all_files)
         # Get possible data splits from txt files in dataset folder
         possible_splits = ['val']
         for file_name in all_files:
@@ -87,7 +87,7 @@ class KittiDataset:
 
         # Check data_split_dir
         # Get possible data split dirs from folder names in dataset folder
-        possible_split_dirs = []
+        possible_split_dirs = ['testing']
         for folder_name in all_files:
             if os.path.isdir(self.dataset_dir + '/' + folder_name):
                 possible_split_dirs.append(folder_name)
@@ -160,9 +160,6 @@ class KittiDataset:
     def _set_up_directories(self):
         """Sets up data directories."""
         # Setup Directories
-        print("\n\n\n")
-        print(self._data_split_dir)
-        print("\n\n\n")
         self.image_dir = self._data_split_dir + '/image_' + str(self._cam_idx)
         self.calib_dir = self._data_split_dir + '/calib'
         self.disp_dir = self._data_split_dir + '/disparity'
@@ -172,7 +169,7 @@ class KittiDataset:
 
         # Labels are always in the training folder
         self.label_dir = self.dataset_dir + \
-            '/training/label_' + str(self._cam_idx)
+            '/label_' + str(self._cam_idx)
 
     def _set_up_classes_name(self):
         # Unique identifier for multiple classes

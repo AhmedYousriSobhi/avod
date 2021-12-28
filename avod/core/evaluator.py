@@ -370,7 +370,7 @@ class Evaluator:
                 ckpt_idx = num_checkpoints - 1
                 ckpt_indices = [ckpt_idx]
             for ckpt_idx in ckpt_indices:
-                checkpoint_to_restore = '/media/yousri/Kingdom/Workspace/ITi/WorkSpace/Python Notebooks/Jupyter/Tekomoro/Wasserstein_Distances_Paper/backup/avod/avod/data/outputs/pyramid_cars_with_aug_example/checkpoints/pyramid_cars_with_aug_example_scratch_300_val-00120000' #self._saver.last_checkpoints[ckpt_idx]
+                checkpoint_to_restore = "avod/avod/data/outputs/pyramid_cars_with_aug_example/checkpoints/pyramid_cars_with_aug_example_scratch_300_val-00120000" #self._saver.last_checkpoints[ckpt_idx]
                 self.run_checkpoint_once(checkpoint_to_restore)
 
         else:
